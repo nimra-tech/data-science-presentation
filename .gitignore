@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+processed_data/*.dta
+processed_data/*.rds
+.DS_Store
+processed_data/.Rapp.history

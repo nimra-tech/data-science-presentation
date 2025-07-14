@@ -1,8 +1,12 @@
-.Rproj.user
+# R artifacts
 .Rhistory
 .RData
-.Ruserdata
-processed_data/*.dta
+
+# Intermediate data
+rawdata/
 processed_data/*.rds
-.DS_Store
-processed_data/.Rapp.history
+processed_data/klips20w_x.dta
+processed_data/klips_imerge.dta
+processed_data/klips_imerge_long.dta
+processed_data/klips_imerge_long1.dta
+processed_data/klips_imerge_long2.dta

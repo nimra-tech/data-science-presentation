@@ -2,11 +2,9 @@
 .Rhistory
 .RData
 
-# Intermediate data
+# Ignore all raw + intermediate data
 rawdata/
-processed_data/*.rds
-processed_data/klips20w_x.dta
-processed_data/klips_imerge.dta
-processed_data/klips_imerge_long.dta
-processed_data/klips_imerge_long1.dta
-processed_data/klips_imerge_long2.dta
+processed_data/*
+
+# But do track our one final dataset
+!processed_data/klips_imerge_long2_reordered_labeled.dta

@@ -27,13 +27,13 @@ nondisclosure: false
 nondisclosuredate: "January 1, 2076"
 
 bibliography: "literatur.bib"
-csl: "https://www.zotero.org/styles/apa"
+csl: _extensions/wjschne/apaquarto/apa.csl
 
 format:
   html: default
   apaquarto-pdf:
     documentmode: stu
-
+   
 geometry:
   - right=2.5cm
   - left=4.5cm

@@ -6,7 +6,7 @@ place: "XXX Cologne Campus XXX"
 
 title: "Replication Study: Strategic Thinking Skills"
 title-secondline: "Nimra Umer"
-subtitle: "Alireza Sadeghi, Abishek Verma, and Nimara Umer"
+subtitle: "Alireza Sadeghi, Abishek Verma, and Nimra Umer"
 shorttitle: ""
 suppress-short-title: true
 
@@ -14,7 +14,7 @@ Projecttype: "XXX Master’s Project XXX"
 studyprogram: "XXX Master of Arts (M.A.) XXX"
 
 author:
-  - name: "Nimra Umer/400767209/Team C"
+  - name: "Nimra Umer/400767209/umer.nimra@stud.hs-fresenius.de/Team C"
     affiliations:
       city: Cologne
     corresponding: true
@@ -299,9 +299,8 @@ API Connectivity Issues: The World Bank API failed to connect, returning the err
 
 If additional time and resources were available, this replication study could be significantly expanded to address unresolved challenges and enhance its depth and applicability. One critical area for improvement would be resolving the persistent connectivity issues with the World Bank API, which prevented access to real-time data for Graph A11A. With more time, I could collaborate with IT support or utilize a virtual private network (VPN) to troubleshoot and stabilize the connection, enabling the retrieval of fresh World Bank World Development Indicators (WDI) data via the `SL.TLF.CACT.FE.ZS` indicator. This would ensure the replication reflects the most current statistics.
 
-Another promising direction would involve applying for access to the Singapore Life Panel (SLP) data through the Centre for Research on Successful Ageing (ROSA) at https://rosa.smu.edu.sg. This dataset could facilitate the replication of Table A11 or Figures A6-A8 from Choi et al. (2024), expanding the analysis beyond WDI to include SLP-specific insights on strategic thinking and economic success. The application process and subsequent data integration could contribute an additional 800-1000 words, covering data acquisition steps, merging techniques, and comparative analysis with the current findings.
-
-A significant focus with more time would be revisiting the cleaning of the Korean Labor and Income Panel Study (KLIPS) data, which I had to abandon due to persistent errors. My attempts to clean the `rawdata/klips/klips01h_i.dta` file encountered multiple obstacles, including a "file not found" error due to an incorrect path, a `merge` failure with "variable age not found" due to format mismatches between waves, and a "duplicate row names" error during `dplyr::left_join()` from duplicate observations. A memory spike during a large merge operation crashed RStudio, and despite switching to `data.table` to reduce memory usage, the "Removed 7 rows" warning persisted, indicating unresolved data integrity issues. These challenges proved insurmountable within the current timeframe, forcing me to set aside KLIPS data integration. With more time—estimated at 10-15 hours—I could develop a robust cleaning pipeline using the `mice` package for multiple imputation, addressing missing waves and format inconsistencies.
+Another promising direction would involve applying for access to the Singapore Life Panel (SLP) data through the Centre for Research on Successful Ageing (ROSA) at https://rosa.smu.edu.sg. This dataset could facilitate the replication of Table A11 or Figures A6-A8 from Choi et al. (2024), expanding the analysis beyond WDI to include SLP-specific insights on strategic thinking and economic success. 
+A significant focus with more time would be revisiting the cleaning of the Korean Labor and Income Panel Study (KLIPS) data, which I had to abandon due to persistent errors. My attempts to clean the `rawdata/klips/klips01h_i.dta` file encountered multiple obstacles, including a "file not found" error due to an incorrect path, a `merge` failure with "variable age not found" due to format mismatches between waves, and a "duplicate row names" error during `dplyr::left_join()` from duplicate observations. A memory spike during a large merge operation crashed RStudio, and despite switching to `data.table` to reduce memory usage, the "Removed 7 rows" warning persisted, indicating unresolved data integrity issues. These challenges proved insurmountable within the current timeframe, forcing me to set aside KLIPS data integration. 
 
 # Group Dynamics
 
@@ -309,7 +308,7 @@ The project tasks were thoughtfully divided among the three of us, with each mem
 
 ## Git & GitHub usage
 
-I committed gap_plot_A11A.png, flfp_plot_A11B.png, graph_A11A.R, and graph_A11B.R to my repository at /Users/nimraumer/Desktop/data-science-presentation using git init, git add, and git commit -m "Add replication graphs and scripts". I plan to make a pull request to https://github.com/hubchev/make_a_pull_request, following the README, by forking, cloning, adding files, and pushing changes.
+I committed gap_plot_A11A.png, flfp_plot_A11B.png, graph_A11A.R, and graph_A11B.R to my repository at /Users/nimraumer/Desktop/data-science-presentation using git init, git add, and git commit -m "Add replication graphs and scripts". I have made a pull request to https://github.com/hubchev/make_a_pull_request, following the README, by forking, cloning, adding files, and pushing changes.
 
 ## Conclusion
 
@@ -319,11 +318,6 @@ This replication study successfully recreated the Stata graph of female labor fo
 
 https://nimra-tech.github.io/data-science-presentation/ \
 
-
-## Supplementary Materials
-
-You can view or download the published report here:\
-[Final Report (PDF)](https://nimra‑tech.github.io/data-science-presentation/Final-Report-Nimra.pdf)
 
 # Affidavit {.unnumbered}
 

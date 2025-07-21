@@ -50,8 +50,8 @@ indent-skip-all: false
 lang: en
 ---
 
+# Abstract
 
-# Abstract 
 This report documents my individual replication of a statistical graph from *Strategic Thinking Skills: A Key to Collective Economic Success* by Choi et al. (2024) using R, focusing on female labor force participation rates from World Bank data (2000-2020) across seven countries: Australia, Germany, Japan, Singapore, South Korea, Sweden, and the U.S. I generated two graphs: A11A, utilizing the World Bank API (saved as `gap_plot_A11A.png`), and A11B, relying on a pre-processed dataset (saved as `flfp_plot_A11B.png`). Key challenges included persistent API connectivity issues, necessitating a fallback to local data, and errors encountered during the cleaning of the Korean Labor and Income Panel Study (KLIPS) data, such as missing waves and merge conflicts. These obstacles were addressed through alternative data sources and iterative debugging. The report highlights my process, the technical hurdles overcome, and remaining weaknesses, such as incomplete KLIPS data integration. Future directions include resolving API issues, exploring Singapore Life Panel (SLP) data for broader analysis, and conducting statistical tests to enhance insights. This study aligns with data science principles in business analytics, demonstrating my ability to adapt and document a reproducible workflow.
 
 # Introduction
@@ -316,6 +316,14 @@ I committed gap_plot_A11A.png, flfp_plot_A11B.png, graph_A11A.R, and graph_A11B.
 This replication study successfully recreated the Stata graph of female labor force participation rates (2000–2020) for seven countries using R and the World Bank WDI. Despite encountering API connectivity setbacks and data‑cleaning challenges—most notably with the KLIPS dataset—both graphs (A11A via API and A11B via a local file) accurately mirror the original visualization’s style and maintain data integrity. Through iterative debugging and fallback strategies, I demonstrated adaptability and technical rigor in constructing reproducible data pipelines. Embedding all R code in this Quarto report ensures full transparency and facilitates future verification or extension of the analysis.
 
 # Presentation Deployment
+
+https://nimra-tech.github.io/data-science-presentation/ \
+
+
+## Supplementary Materials
+
+You can view or download the published report here:\
+[Final Report (PDF)](https://nimra‑tech.github.io/data-science-presentation/Final-Report-Nimra.pdf)
 
 # Affidavit {.unnumbered}
 

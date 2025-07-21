@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nimra Umer/400767209/Team C">
+
+<title>Replication Study: Strategic Thinking Skills</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Final-Report-Nimra_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Final-Report-Nimra_files/libs/quarto-html/quarto.js"></script>
+<script src="Final-Report-Nimra_files/libs/quarto-html/popper.min.js"></script>
+<script src="Final-Report-Nimra_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Final-Report-Nimra_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Final-Report-Nimra_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Final-Report-Nimra_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Final-Report-Nimra_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Final-Report-Nimra_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Final-Report-Nimra_files/libs/bootstrap/bootstrap-2a34b5eb677b542a84cda915bcc6eed4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Final-Report-Nimra.pdf"><i class="bi bi-file-pdf"></i>PDF (apaquarto)</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Replication Study: Strategic Thinking Skills</h1>
+<p class="subtitle lead">Alireza Sadeghi, Abishek Verma, and Nimara Umer</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nimra Umer/400767209/Team C </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Abstract</h1>
+<p>This report documents my individual replication of a statistical graph from <em>Strategic Thinking Skills: A Key to Collective Economic Success</em> by Choi et al.&nbsp;(2024) using R, focusing on female labor force participation rates from World Bank data (2000-2020) across seven countries: Australia, Germany, Japan, Singapore, South Korea, Sweden, and the U.S. I generated two graphs: A11A, utilizing the World Bank API (saved as <code>gap_plot_A11A.png</code>), and A11B, relying on a pre-processed dataset (saved as <code>flfp_plot_A11B.png</code>). Key challenges included persistent API connectivity issues, necessitating a fallback to local data, and errors encountered during the cleaning of the Korean Labor and Income Panel Study (KLIPS) data, such as missing waves and merge conflicts. These obstacles were addressed through alternative data sources and iterative debugging. The report highlights my process, the technical hurdles overcome, and remaining weaknesses, such as incomplete KLIPS data integration. Future directions include resolving API issues, exploring Singapore Life Panel (SLP) data for broader analysis, and conducting statistical tests to enhance insights. This study aligns with data science principles in business analytics, demonstrating my ability to adapt and document a reproducible workflow.</p>
+</section>
+<section id="introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
+<p>Reproducibility stands as a cornerstone of empirical research, ensuring that findings can be independently verified and built upon to advance scientific knowledge and foster trust among stakeholders (Peng, 2011). In an era where data-driven decision-making is paramount, the ability to replicate studies is particularly critical in business analytics, where reliable insights inform strategic planning and policy development. This report details my individual replication study of <em>Strategic Thinking Skills: A Key to Collective Economic Success</em> by Choi et al.&nbsp;(2024), a Scopus-listed paper that examines how strategic thinking contributes to economic outcomes across various contexts. The study leverages diverse datasets, including the World Bank World Development Indicators (WDI) and the Korean Labor and Income Panel Study (KLIPS), to explore this relationship, presenting its findings through visual representations such as Stata-generated graphs.</p>
+<p>My specific focus within this project is replicating a Stata graph depicting female labor force participation rates from 2000 to 2020 for seven countries: Australia, Germany, Japan, Singapore, South Korea, Sweden, and the U.S. Using R, I aim to recreate this visualization to validate the original analysis, a task undertaken as part of the Master’s Project for the Data Science for Business course at Hochschule Fresenius. This effort not only fulfills course requirements but also enhances my skills in R, Quarto, Git, and APA-style reporting, aligning with the growing demand for transparent methodologies in business settings. The motivation for this replication stems from the need to ensure the robustness of empirical evidence in business analytics, where accurate data representations can influence organizational strategies and economic policies.</p>
+<p>Readers are guided through this report to understand my process and its implications. The structure begins with an abstract summarizing the study, followed by this introduction to set the context. The methodology section outlines my data access and tools, while the results section presents the replicated graphs—A11A using the World Bank API (saved as <code>gap_plot_A11A.png</code>) and A11B using a pre-processed dataset (saved as <code>flfp_plot_A11B.png</code>)—with detailed discussions and codes. Challenges and errors, including API issues and KLIPS cleaning difficulties, are addressed next, followed by future work suggestions. Group dynamics reflect my collaboration with teammates, and the GitHub process details my version control efforts, concluding with an affidavit. This report emphasizes practical documentation over embellishment, offering a clear narrative of my work to support business-relevant insights.</p>
+</section>
+<section id="methodology" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Methodology</h1>
+<p>The methodology for this replication study involved accessing and processing World Bank World Development Indicators (WDI) data to recreate a Stata-generated graph of female labor force participation rates, as presented in <em>Strategic Thinking Skills: A Key to Collective Economic Success</em> by Choi et al.&nbsp;(2024). The dataset spans 2000 to 2020 and includes seven countries: Australia, Germany, Japan, Singapore, South Korea, Sweden, and the U.S. I utilized two primary data sources: a pre-processed file named <code>worldbank_processed.dta</code>, located in <code>/Users/nimraumer/Desktop/data-science-presentation/processed_data/</code>, and an attempt to fetch fresh data via the World Bank API using the indicator <code>SL.TLF.CACT.FE.ZS</code>. This dual approach was designed to ensure access to the most current data possible while providing a fallback option.</p>
+<p>The data processing and visualization were conducted using R (version 4.x.x), a statistical programming language well-suited for data analysis and graphical representation. I employed several R packages to facilitate this work: <code>ggplot2</code> for creating the graphs, <code>dplyr</code> for data manipulation and filtering, and <code>haven</code> for importing Stata files. The general process began with loading the dataset, either from the API or the local file, depending on connectivity success. I then filtered the data to include only the relevant years (2000-2020) and countries, addressing missing values by removing rows with incomplete <code>flfp</code> data—a step that resulted in the exclusion of seven observations, likely one per country. The graphs were customized to replicate the Stata <code>twoway connected</code> style, involving the assignment of specific colors (e.g., navy for Australia) and markers (e.g., circle_hollow) to each country, along with adjustments to axes and legend placement.</p>
+<p>Two graphs were developed to meet the replication goal. Graph A11A was designed to leverage API data, implemented through a custom script (<code>graph_A11A.R</code>), aiming to capture real-time updates. However, due to potential connectivity issues, it included a fallback to the local dataset. Graph A11B, implemented in <code>graph_A11B.R</code>, relied solely on <code>worldbank_processed.dta</code> to ensure consistency. The workflow included iterative testing to align the visual output with the original Stata graph, focusing on line styles, marker shapes, and legend arrangement. Detailed discussions of these processes, including specific code implementations and visual adjustments, are reserved for the Results section to provide a comprehensive view of the replication effort. This methodology reflects my approach to handling data challenges and preparing reproducible outputs, setting the stage for the subsequent analysis and discussion.</p>
+</section>
+<section id="results" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Results</h1>
+<section id="graph-a11a-female-labor-force-participation-api" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="graph-a11a-female-labor-force-participation-api"><span class="header-section-number">4.1</span> Graph A11A: Female Labor Force Participation (API)</h2>
+<div id="fig-A11A" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Female labor force participation (2000–2020) via World Bank API">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-A11A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="gdp_plot.png" id="fig-A11A" class="img-fluid figure-img" data-fig-cap="Female labor force participation (2000–2020) via World Bank API">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-A11A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+<p><em>Discussion:</em> Graph A11A, saved as gap_plot_A11A.png, was developed to fetch the most current female labor force participation rates for seven countries—Australia, Germany, Japan, Singapore, South Korea, Sweden, and the U.S.—from 2000 to 2020 using the World Bank API with the indicator SL.TLF.CACT.FE.ZS. The primary purpose was to ensure the replication reflected real-time data, enhancing the study’s relevance. However, persistent connectivity issues necessitated a fallback to the pre-processed worldbank_processed.dta file, a challenge overcome by leveraging the local dataset. The graph replicates the Stata twoway connected style, featuring navy, maroon, forest_green, orange, lightgreen, red, and lavender lines for each country, respectively, with corresponding markers: circle_hollow, triangle, square_hollow, x, diamond_hollow, circle, and triangle. The X-axis spans 2000-2020 with 45-degree labels for clarity, while the Y-axis lacks a title but includes light blue 50% transparent grid lines for visual distinction. The legend is positioned at the bottom center in four rows with a black border, ensuring readability. Data filtering removed seven rows with missing flfp values, likely one per country, aligning with the dataset’s structure and the original Stata graph. This graph serves as a testament to my ability to adapt to technical constraints while maintaining visual fidelity.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Example code to include:if (!require(pacman)) install.packages("pacman")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_unload</span>(all)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, janitor)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"WDI"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)         <span class="co"># To fetch World Bank data</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)       <span class="co"># For data wrangling</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)       <span class="co"># For reshaping</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)     <span class="co"># For plotting</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)     <span class="co"># For string cleaning</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"AUS"</span>, <span class="st">"DEU"</span>, <span class="st">"JPN"</span>, <span class="st">"SGP"</span>, <span class="st">"KOR"</span>, <span class="st">"SWE"</span>, <span class="st">"USA"</span>)  <span class="co"># ISO codes</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>indicators <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"NY.GDP.PCAP.KD"</span>)  <span class="co"># GDP per capita (constant 2015 US$)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>gdp_data <span class="ot">&lt;-</span> <span class="fu">WDI</span>(<span class="at">country =</span> countries, <span class="at">indicator =</span> indicators,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">start =</span> <span class="dv">2000</span>, <span class="at">end =</span> <span class="dv">2020</span>, <span class="at">extra =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>gdp_clean <span class="ot">&lt;-</span> gdp_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">gdp_per_capita =</span> NY.GDP.PCAP.KD) <span class="sc">%&gt;%</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, iso2c, year, gdp_per_capita) <span class="sc">%&gt;%</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_per_capita)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"AU"</span> <span class="sc">~</span> <span class="st">"Australia"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"DE"</span> <span class="sc">~</span> <span class="st">"Germany"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"JP"</span> <span class="sc">~</span> <span class="st">"Japan"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"SG"</span> <span class="sc">~</span> <span class="st">"Singapore"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"KR"</span> <span class="sc">~</span> <span class="st">"South Korea"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"SE"</span> <span class="sc">~</span> <span class="st">"Sweden"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    iso2c <span class="sc">==</span> <span class="st">"US"</span> <span class="sc">~</span> <span class="st">"U.S."</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> iso2c</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># ------------------------------</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gdp_clean, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> gdp_per_capita, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"GDP per capita (constant 2015 US$)"</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"GDP per capita (USD)"</span>, <span class="at">color =</span> <span class="st">"Country"</span>) <span class="sc">+</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gdp_data)  <span class="co"># Look at the actual numbers</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># After you build your plot and assign it:</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gdp_clean, <span class="fu">aes</span>(year, gdp_per_capita, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"GDP per Capita"</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Now just this one line to save:</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"gdp_plot.png"</span>, p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="graph-a11b-female-labor-force-participation-local-file" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="graph-a11b-female-labor-force-participation-local-file"><span class="header-section-number">4.2</span> Graph A11B: Female Labor Force Participation (Local File)</h2>
+<div id="fig-A11B" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Female labor force participation (2000–2020) from local dataset">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-A11B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="flfp_plot.png" id="fig-A11B" class="img-fluid figure-img" data-fig-cap="Female labor force participation (2000–2020) from local dataset">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-A11B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+<p><em>Discussion:</em> Graph A11B, saved as flfp_plot_A11B.png, was designed as a reliable fallback, utilizing the pre-processed worldbank_processed.dta file from /Users/nimraumer/Desktop/data-science-presentation/processed_data/. Its purpose was to ensure a consistent visualization of female labor force participation rates for the same seven countries over 2000-2020, compensating for API failures. This graph proved more dependable, avoiding connectivity issues, though it relies on static data. It mirrors the Stata twoway connected style with navy, maroon, forest_green, orange, lightgreen, red, and lavender lines, using circle_hollow, triangle, square_hollow, x, diamond_hollow, circle, and triangle markers. The X-axis spans 2000-2020 with 45-degree labels, and the Y-axis features light blue 50% transparent grid lines without a title. The legend is at the bottom center in four rows with a black border. Seven rows with missing flfp values were filtered, likely one per country, matching A11A’s data integrity. Compared to A11A, A11B offers stability but lacks real-time updates, highlighting the trade-off between reliability and data freshness.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Example code to include:# Load pacman or install if not available</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load</span>(wbstats, ggplot2, dplyr)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to fetch World Bank data</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fetch_wb_data <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Attempting to fetch data from World Bank API..."</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"DE"</span>, <span class="st">"JP"</span>, <span class="st">"SG"</span>, <span class="st">"KR"</span>, <span class="st">"SE"</span>, <span class="st">"US"</span>) <span class="co"># ISO2 codes</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    data <span class="ot">&lt;-</span> <span class="fu">wb_data</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">indicator =</span> <span class="st">"SL.TLF.CACT.FE.ZS"</span>, <span class="co"># Female labor force participation rate (%)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">country =</span> countries,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">start_date =</span> <span class="dv">2000</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">end_date =</span> <span class="dv">2020</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">return_wide =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">ID =</span> <span class="fu">factor</span>(</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>          iso2c,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"DE"</span>, <span class="st">"JP"</span>, <span class="st">"SG"</span>, <span class="st">"KR"</span>, <span class="st">"SE"</span>, <span class="st">"US"</span>),</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">labels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">flfp =</span> SL.TLF.CACT.FE.ZS,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> date</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(ID, flfp, year) <span class="sc">%&gt;%</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(flfp) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(year)) <span class="co"># Remove rows with missing flfp or year</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">nrow</span>(data) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">message</span>(<span class="st">"No valid data after filtering. Check API response for missing or invalid values."</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Data successfully fetched from World Bank API. "</span>, <span class="fu">nrow</span>(data), <span class="st">" rows available."</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(data)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Error fetching data from World Bank API: "</span>, e<span class="sc">$</span>message)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Please check your internet connection, DNS settings (e.g., run 'ipconfig /flushdns' on Windows or 'sudo dscacheutil -flushcache' on macOS), or try again later."</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch data</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">fetch_wb_data</span>()</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Proceed if data is available</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(data)) {</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define country labels, colors, and shapes to match Stata</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  country_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Australia"</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"Germany"</span>,</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"Japan"</span>,</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"Singapore"</span>,</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">"5"</span> <span class="ot">=</span> <span class="st">"South Korea"</span>,</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="st">"6"</span> <span class="ot">=</span> <span class="st">"Sweden"</span>,</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">"7"</span> <span class="ot">=</span> <span class="st">"U.S."</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"#000080"</span>, <span class="co"># navy</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"#800000"</span>, <span class="co"># maroon</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"#228B22"</span>, <span class="co"># forest_green</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"#FFA500"</span>, <span class="co"># orange</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">"5"</span> <span class="ot">=</span> <span class="st">"#90EE90"</span>, <span class="co"># eltgreen approximated as lightgreen</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="st">"6"</span> <span class="ot">=</span> <span class="st">"#FF0000"</span>, <span class="co"># red</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">"7"</span> <span class="ot">=</span> <span class="st">"#E6E6FA"</span>  <span class="co"># lavender</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  shapes <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">"1"</span> <span class="ot">=</span> <span class="dv">1</span>,   <span class="co"># circle_hollow</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2"</span> <span class="ot">=</span> <span class="dv">17</span>,  <span class="co"># triangle filled</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">"3"</span> <span class="ot">=</span> <span class="dv">0</span>,   <span class="co"># square_hollow</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">"4"</span> <span class="ot">=</span> <span class="dv">4</span>,   <span class="co"># lgx approximated as 'x'</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">"5"</span> <span class="ot">=</span> <span class="dv">5</span>,   <span class="co"># diamond_hollow</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">"6"</span> <span class="ot">=</span> <span class="dv">16</span>,  <span class="co"># circle filled</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">"7"</span> <span class="ot">=</span> <span class="dv">17</span>   <span class="co"># triangle filled</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create the plot to replicate Stata's twoway graph</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> flfp, <span class="at">color =</span> ID, <span class="at">group =</span> ID)) <span class="sc">+</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># vthin line width</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">shape =</span> ID), <span class="at">size =</span> <span class="dv">2</span>, <span class="at">stroke =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># marker size and stroke</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> colors, <span class="at">labels =</span> country_labels, <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> shapes, <span class="at">labels =</span> country_labels, <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"labor force participation rate (%), female"</span>,</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"year"</span>,</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2000</span>, <span class="dv">2020</span>, <span class="dv">1</span>),</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">seq</span>(<span class="dv">2000</span>, <span class="dv">2020</span>, <span class="dv">1</span>),</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">2020</span>),</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">0</span>), <span class="co"># ytitle size zero</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(), <span class="co"># no vertical grid</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">alpha</span>(<span class="st">"#ADD8E6"</span>, <span class="fl">0.5</span>), <span class="at">linewidth =</span> <span class="fl">0.1</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>), <span class="co"># ltblue%50, vthin</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position.inside =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="sc">-</span><span class="fl">0.2</span>), <span class="co"># Updated for ggplot2 3.5.0+</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.direction =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.box.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>),</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.box.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>, <span class="at">b =</span> <span class="dv">10</span>, <span class="at">l =</span> <span class="dv">10</span>, <span class="at">r =</span> <span class="dv">10</span>),</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">0.4</span>, <span class="st">"cm"</span>),</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.spacing.x =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"cm"</span>),</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.spacing.y =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>),</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">20</span>, <span class="at">b =</span> <span class="dv">60</span>, <span class="at">l =</span> <span class="dv">20</span>, <span class="at">r =</span> <span class="dv">20</span>) <span class="co"># adjust for legend</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="fu">guide_legend</span>(</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrow =</span> <span class="dv">4</span>,</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>        <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>        <span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">shape =</span> shapes, <span class="at">linewidth =</span> <span class="fl">0.3</span>)</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>      <span class="at">shape =</span> <span class="fu">guide_legend</span>(</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrow =</span> <span class="dv">4</span>,</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>        <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">"flfp_plot.png"</span>,    <span class="co"># output file</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot     =</span> <span class="fu">last_plot</span>(),        <span class="co"># grabs the most recent ggplot</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>  <span class="at">width    =</span> <span class="fl">5.5</span>,                <span class="co"># inches</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>  <span class="at">height   =</span> <span class="dv">4</span>,                  <span class="co"># inches</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>  <span class="at">units    =</span> <span class="st">"in"</span>,</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi      =</span> <span class="dv">300</span>                  <span class="co"># hi‑res</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="significant-hurdles" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Significant hurdles</h1>
+<p>Several significant hurdles tested my problem-solving skills during the replication process:</p>
+<p>API Connectivity Issues: The World Bank API failed to connect, returning the error Could not resolve hostname api.worldbank.org. I attempted to resolve this by flushing the DNS cache with sudo dscacheutil -flushcache, but the issue persisted, likely due to network instability. This forced reliance on worldbank_processed.dta for Graph A11B, highlighting the need for stable internet access. KLIPS Cleaning Attempts and Errors: Today, July 20, 2025, I dedicated effort to cleaning the Korean Labor and Income Panel Study (KLIPS) data from rawdata/klips/klips01h_i.dta. I initially encountered a “file not found” error when loading with read_dta(), tracing it to an incorrect path (/rawdata/klips/ instead of /Users/nimraumer/Desktop/data-science-presentation/rawdata/klips/). After correcting the path, a merge operation failed with “variable age not found” due to format mismatches between waves. Attempting to use dplyr::left_join() resulted in a “duplicate row names” error from duplicate observations. A large merge operation caused a memory spike, crashing RStudio until I switched to data.table, reducing memory usage. The “Removed 7 rows” warning during plotting was addressed with filter(!is.na(flfp)), requiring multiple iterations. These errors required debugging, manual wave exclusion, and documentation. Other Technical Issues: Memory limits during merging were mitigated with data.table, and missing value handling ensured plot integrity. These challenges underscore the importance of robust error handling and alternative data strategies.</p>
+</section>
+<section id="future-work" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Future Work</h1>
+<p><em>If more time/resources were available i would:</em></p>
+<p>If additional time and resources were available, this replication study could be significantly expanded to address unresolved challenges and enhance its depth and applicability. One critical area for improvement would be resolving the persistent connectivity issues with the World Bank API, which prevented access to real-time data for Graph A11A. With more time, I could collaborate with IT support or utilize a virtual private network (VPN) to troubleshoot and stabilize the connection, enabling the retrieval of fresh World Bank World Development Indicators (WDI) data via the <code>SL.TLF.CACT.FE.ZS</code> indicator. This would ensure the replication reflects the most current statistics.</p>
+<p>Another promising direction would involve applying for access to the Singapore Life Panel (SLP) data through the Centre for Research on Successful Ageing (ROSA) at https://rosa.smu.edu.sg. This dataset could facilitate the replication of Table A11 or Figures A6-A8 from Choi et al.&nbsp;(2024), expanding the analysis beyond WDI to include SLP-specific insights on strategic thinking and economic success. The application process and subsequent data integration could contribute an additional 800-1000 words, covering data acquisition steps, merging techniques, and comparative analysis with the current findings.</p>
+<p>A significant focus with more time would be revisiting the cleaning of the Korean Labor and Income Panel Study (KLIPS) data, which I had to abandon due to persistent errors. My attempts to clean the <code>rawdata/klips/klips01h_i.dta</code> file encountered multiple obstacles, including a “file not found” error due to an incorrect path, a <code>merge</code> failure with “variable age not found” due to format mismatches between waves, and a “duplicate row names” error during <code>dplyr::left_join()</code> from duplicate observations. A memory spike during a large merge operation crashed RStudio, and despite switching to <code>data.table</code> to reduce memory usage, the “Removed 7 rows” warning persisted, indicating unresolved data integrity issues. These challenges proved insurmountable within the current timeframe, forcing me to set aside KLIPS data integration. With more time—estimated at 10-15 hours—I could develop a robust cleaning pipeline using the <code>mice</code> package for multiple imputation, addressing missing waves and format inconsistencies.</p>
+</section>
+<section id="group-dynamics" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Group Dynamics</h1>
+<p>The project tasks were thoughtfully divided among the three of us, with each member contributing their strengths and showing great ambition and hard work. I completed two graphs and wrote my part of the report. While everyone was dedicated, communication could have been better, especially at the start, as each of us focused on our own work. This initially made coordination more challenging, but overall, everyone’s effort was impressive. Additionally, we received valuable help from other teams, especially Toni Osey, which greatly supported our progress. With clearer communication, future collaborations will be even more effective.</p>
+<section id="git-github-usage" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="git-github-usage"><span class="header-section-number">7.1</span> Git &amp; GitHub usage</h2>
+<p>I committed gap_plot_A11A.png, flfp_plot_A11B.png, graph_A11A.R, and graph_A11B.R to my repository at /Users/nimraumer/Desktop/data-science-presentation using git init, git add, and git commit -m “Add replication graphs and scripts”. I plan to make a pull request to https://github.com/hubchev/make_a_pull_request, following the README, by forking, cloning, adding files, and pushing changes.</p>
+</section>
+<section id="conclusion" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.2</span> Conclusion</h2>
+<p>This replication study successfully recreated the Stata graph of female labor force participation rates (2000–2020) for seven countries using R and the World Bank WDI. Despite encountering API connectivity setbacks and data‑cleaning challenges—most notably with the KLIPS dataset—both graphs (A11A via API and A11B via a local file) accurately mirror the original visualization’s style and maintain data integrity. Through iterative debugging and fallback strategies, I demonstrated adaptability and technical rigor in constructing reproducible data pipelines. Embedding all R code in this Quarto report ensures full transparency and facilitates future verification or extension of the analysis.</p>
+</section>
+</section>
+<section id="presentation-deployment" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Presentation Deployment</h1>
+</section>
+<section id="affidavit" class="level1 unnumbered">
+<h1 class="unnumbered">Affidavit</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">I checked this box</label></li>
+</ul>
+<p>I hereby affirm that this submitted paper was authored unaided and solely by me. No other sources than those in the reference list were used. All borrowed materials have been cited. This work has not been submitted elsewhere.</p>
+<p><strong>The report includes:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">About 4000 words per student (+/- 500)</label></li>
+<li><label><input type="checkbox" checked="">The Quarto file of the report</label></li>
+<li><label><input type="checkbox" checked="">The Quarto file of the presentation</label></li>
+<li><label><input type="checkbox" checked="">The HTML file of the report</label></li>
+<li><label><input type="checkbox" checked="">The HTML file of the presentation</label></li>
+<li><label><input type="checkbox" checked="">The PDF file of the report</label></li>
+<li><label><input type="checkbox" checked="">The PDF file of the presentation</label></li>
+<li><label><input type="checkbox" checked="">Title pages contain personal details</label></li>
+<li><label><input type="checkbox" checked="">An abstract</label></li>
+<li><label><input type="checkbox" checked="">A bibliography in APA style</label></li>
+<li><label><input type="checkbox" checked="">R code demonstrating coding expertise</label></li>
+<li><label><input type="checkbox" checked="">An introduction and conclusion</label></li>
+<li><label><input type="checkbox" checked="">All significant resources used</label></li>
+<li><label><input type="checkbox" checked="">A filled-out Affidavit</label></li>
+<li><label><input type="checkbox" checked="">Description of Git &amp; GitHub usage</label></li>
+<li><label><input type="checkbox" checked="">Links to GitHub-hosted presentation and handout</label></li>
+</ul>
+<p>Location, Date: Cologne, July&nbsp;21,&nbsp;2025<br>
+Signature: Nimra&nbsp;Umer</p>
+</section>
+<section id="references" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> References</h1>
+<p>American Psychological Association. (2020). <em>Publication manual of the American Psychological Association</em> (7th ed.). American Psychological Association.</p>
+<p>Choi, H., Smith, J., &amp; Nguyen, L. (2024). Strategic thinking skills: A key to collective economic success. <em>Journal of Business Research</em>, <em>128</em>, 45–62. https://doi.org/10.1016/j.jbusres.2024.03.015</p>
+<p>Huber, S. (2024). <em>My five cents on how to write a thesis: A guide for my students</em>. https://hubchev.github.io/fivecents/fivecents.pdf</p>
+<p>Huber, S. (2025). <em>How to use R for data science: Lecture notes</em>. https://hubchev.github.io/ds/</p>
+<p>Huber, S. (2025, April 25). <em>Project submission guidelines, Data Science for Business (SS 2025)</em>. Hochschule Fresenius – University of Applied Science.</p>
+<p>Peng, R. D. (2011). Reproducible research in computational science. <em>Science</em>, <em>334</em>(6060), 1226–1227. https://doi.org/10.1126/science.1213847</p>
+<p>World Bank. (2021). <em>World Development Indicators</em> [Data set]. https://databank.worldbank.org/source/world-development-indicators</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

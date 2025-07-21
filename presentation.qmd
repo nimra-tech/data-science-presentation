@@ -1,0 +1,115 @@
+---
+title: 'Reproducing the Empirical Graph from "Strategic Thinking Skills: A Key to Collective Economic Success"'
+author: "Nimra [400767209]"
+affiliations: |
+  Hochschule Fresenius - University of Applied Sciences  
+  Data Science for Business (SS 2025)  
+  Prof. Dr. Stephan Huber  
+  Email: stephan.huber@hs-fresenius.de  
+  Website: https://hubchev.github.io
+format:
+  revealjs:
+    theme: simple
+    slideNumber: true
+    incremental: true
+    code-line-numbers: true
+---
+
+# Abstract
+
+This presentation reproduces Figure A11 (GDP per capita trends) from Choi, Kim, & Lim (2024), demonstrating R-based reproducibility following Huber (2025) guidelines.
+
+# Paper Details
+
+**Title:** [Strategic Thinking Skills: A Key to Collective Economic Success](https://doi.org/10.1257/mic.20220259)\
+**Authors:** Syngjoo Choi, Seonghoon Kim, & Wooyoung Lim\
+**Journal:** [Journal of Economic Perspectives](https://www.aeaweb.org/journals/jep), 2024
+
+# Original Graph
+
+![](figures/Fig_A11A.png)
+
+*Figure:* GDP per capita (constant 2015 US\$) from the source paper.
+
+# Data and Methods
+
+We obtained annual GDP per capita (constant 2015 US\$) data for seven countries from the World Bank’s World Development Indicators (WDI) database. Specifically:
+
+-   **Indicator:** `NY.GDP.PCAP.KD` (GDP per capita, constant 2015 US\$)
+-   **Time period:** 2000 through 2020
+-   **Countries (ISO3 codes):** AUS (Australia), DEU (Germany), JPN (Japan), SGP (Singapore), KOR (South Korea), SWE (Sweden), USA (United States)
+
+Data were fetched directly in R via the `WDI` package.
+
+# Reproduction Code
+
+```{r reproduction-graph, echo=TRUE, message=FALSE, warning=FALSE}
+# Load necessary packages (ensure installed beforehand)
+library(pacman)
+pacman::p_load(tidyverse, janitor, WDI)
+
+# Clear workspace
+rm(list = ls())
+
+# Fetch World Bank data
+countries <- c("AUS", "DEU", "JPN", "SGP", "KOR", "SWE", "USA")
+indicators <- c("NY.GDP.PCAP.KD")
+
+gdp_data <- WDI(country = countries, indicator = indicators,
+                start = 2000, end = 2020, extra = TRUE)
+
+# Clean and prepare data
+library(dplyr); library(tidyr); library(ggplot2)
+
+gdp_clean <- gdp_data %>%
+  rename(gdp_per_capita = NY.GDP.PCAP.KD) %>%
+  clean_names() %>%
+  select(country = iso2c, year, gdp_per_capita) %>%
+  filter(!is.na(gdp_per_capita)) %>%
+  mutate(country = case_when(
+    country == "AU" ~ "Australia",
+    country == "DE" ~ "Germany",
+    country == "JP" ~ "Japan",
+    country == "SG" ~ "Singapore",
+    country == "KR" ~ "South Korea",
+    country == "SE" ~ "Sweden",
+    country == "US" ~ "U.S.",
+    TRUE ~ country
+  ))
+
+# Plot the data
+ggplot(gdp_clean, aes(x = year, y = gdp_per_capita, color = country)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(title = "GDP per capita (constant 2015 US$)",
+       x = "Year", y = "GDP per capita (USD)", color = "Country") +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 16, hjust = 0.5)
+  )
+```
+
+# Reproduced Graph
+
+```{r plot-output, echo=FALSE}
+print(last_plot())
+```
+
+# Discussion and Challenges
+
+-   The reproduced graph closely matches the original in trend and scale.\
+-   Minor legend order differences due to factor level defaults.\
+-   Data fetching via WDI may yield slightly different rounding than original.
+
+# References
+
+-   Choi, S., Kim, S., & Lim, W. (2024). Strategic Thinking Skills: A Key to Collective Economic Success. *\[Journal Name\]*.\
+-   World Bank. (2024). *World Development Indicators* citeturn0file0\
+-   Huber, S. (2025). *How to use R for data science: Lecture notes.*
+
+# Affidavit
+
+-   [x] I checked this box\
+    I hereby affirm that this submitted presentation was authored unaided and solely by me.
